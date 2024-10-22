@@ -1,7 +1,10 @@
 { config, pkgs, ... }:
 
 {
+<<<<<<< HEAD
   hardware.opengl.enable = true;
+=======
+>>>>>>> 7d8dfe7 (simplified setup)
   services.xserver.videoDrivers = ["nvidia"];
 
   hardware.nvidia = {

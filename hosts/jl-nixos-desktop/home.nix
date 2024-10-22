@@ -1,5 +1,17 @@
 {  config, pkgs, lib, ... }: 
+<<<<<<< HEAD
 
+=======
+let
+
+  treesitterWithGrammars = pkgs.vimPlugins.nvim-treesitter.withAllGrammars;
+
+  treesitter-parsers = pkgs.symlinkJoin {
+    name = "treesitter-parsers";
+    paths = treesitterWithGrammars.dependencies;
+  };
+in
+>>>>>>> 7d8dfe7 (simplified setup)
 {
   home = {
     username = "jordanl";
@@ -322,9 +334,15 @@
 				vimcmd_replace_symbol = "[](bold fg:color_purple)";
 				vimcmd_visual_symbol = "[](bold fg:color_yellow)";
 		  };
+<<<<<<< HEAD
 	};
 
     };
+=======
+	  };
+  };
+
+>>>>>>> 7d8dfe7 (simplified setup)
 	programs.fzf = {
 		enable = true;
 		enableZshIntegration = true;
@@ -349,6 +367,7 @@
 		};
 	};
 	
+<<<<<<< HEAD
 	programs.neovim {
 		plugins = [
    			pkgs.vimPlugins.nvim-treesitter.withAllGrammars
@@ -356,4 +375,24 @@
 
 	};
 	
+=======
+	programs.neovim = {
+		enable = true;
+    vimAlias = true;
+    defaultEditor = true;
+    plugins = [
+      treesitterWithGrammars
+    ];
+  };
+
+  home.file."./.config/nvim/lua/config/treesitter.lua".text = ''
+    vim.opt.runtimepath:append("${treesitter-parsers}")
+    vim.opt.runtimepath:append("${treesitterWithGrammars}")
+  '';
+
+  home.file."./.local/share/nvim/nix/nvim-treesitter/" = {
+    recursive = true;
+    source = treesitterWithGrammars;
+  };
+>>>>>>> 7d8dfe7 (simplified setup)
 }

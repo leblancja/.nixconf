@@ -11,6 +11,11 @@
   environment.systemPackages = with pkgs; [
     mangohud
     protonup
+<<<<<<< HEAD
+=======
+    heroic
+    wine-staging
+>>>>>>> 7d8dfe7 (simplified setup)
   ];
 
   environment.sessionVariables = {
@@ -20,6 +25,9 @@
 
   programs.gamemode.enable = true;
 
+<<<<<<< HEAD
   programs.heroic.enable;
+=======
+>>>>>>> 7d8dfe7 (simplified setup)
 
 }
