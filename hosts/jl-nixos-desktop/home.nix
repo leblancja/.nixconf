@@ -1,5 +1,6 @@
 {  config, pkgs, lib, ... }: 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 let
@@ -12,6 +13,8 @@ let
   };
 in
 >>>>>>> 7d8dfe7 (simplified setup)
+=======
+>>>>>>> 27d4922 (add libvirt)
 {
   home = {
     username = "jordanl";
@@ -27,16 +30,11 @@ in
       obsidian
       go
       typescript
-      deno
       jdk
       ranger
       python3
-      php83
-      php83Packages.composer
       nodejs_22
-      discord
       slack
-      laravel
       lazygit
       gcc
       ripgrep
@@ -54,9 +52,12 @@ in
       docker-compose
       gtk-engine-murrine
       gnome-themes-extra
+      prismlauncher
+      reaper
+      godot_4
     ];
   };
-  
+
   programs.home-manager.enable = true;
   nixpkgs.config.allowUnfree = true;
   
@@ -380,19 +381,24 @@ in
 		enable = true;
     vimAlias = true;
     defaultEditor = true;
+
     plugins = [
-      treesitterWithGrammars
-    ];
+        pkgs.vimPlugins.nvim-treesitter
+      ];
+   };
+
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
   };
 
-  home.file."./.config/nvim/lua/config/treesitter.lua".text = ''
-    vim.opt.runtimepath:append("${treesitter-parsers}")
-    vim.opt.runtimepath:append("${treesitterWithGrammars}")
-  '';
 
+<<<<<<< HEAD
   home.file."./.local/share/nvim/nix/nvim-treesitter/" = {
     recursive = true;
     source = treesitterWithGrammars;
   };
 >>>>>>> 7d8dfe7 (simplified setup)
+=======
+>>>>>>> 27d4922 (add libvirt)
 }

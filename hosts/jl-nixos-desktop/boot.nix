@@ -10,4 +10,9 @@
     efi.canTouchEfiVariables = true;
     efi.efiSysMountPoint = "/boot";
     };
+
+  boot = {
+    kernelModules = ["kvm-amd" "vfio-pci"];
+
+  };
 }
