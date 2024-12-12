@@ -350,12 +350,12 @@
 
 	programs.neovim = {
 		enable = true;
-    vimAlias = true;
-    defaultEditor = true;
+    	vimAlias = true;
+    	defaultEditor = true;
 
-    plugins = [
-        pkgs.vimPlugins.nvim-treesitter
-      ];
+    	plugins = [
+        	pkgs.vimPlugins.nvim-treesitter
+      	];
    };
 
   programs.direnv = {
