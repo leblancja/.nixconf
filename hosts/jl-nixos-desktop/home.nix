@@ -41,6 +41,7 @@
       reaper
       godot_4
 	  itch
+	  seahorse
     ];
   };
 

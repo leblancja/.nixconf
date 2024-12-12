@@ -54,18 +54,18 @@
   };
 
   services.gnome.gnome-keyring.enable = true;
+  services.dbus.enable = true;
 
   # Install firefox.
   programs.firefox.enable = true;
 
   programs.zsh.enable = true;
 
-  programs.ssg.startAgent = true;
+  programs.ssh.startAgent = false;
 
   environment.systemPackages = with pkgs; [
 	  vim
     wget
-	  git
 	  curl
 	  unzip
 	  xsel
