@@ -167,9 +167,9 @@
 		  palettes.kanagawa = {
 				color_fg0 = "#DCD7BA";  # Light text color
 				color_fg1 = "#2A2A37";
-        color_bg1 = "#2A2A37";  # Slightly lighter dark background (reverted)
+        		color_bg1 = "#2A2A37";  # Slightly lighter dark background (reverted)
 	 			color_bg3 = "#363646";  # Kept as is
-        color_blue = "#5D87C7";
+        		color_blue = "#5D87C7";
 				color_aqua = "#4D7B72";
 				color_green = "#98BB6C";
 				color_orange = "#E46826";  # Darker orange for better contrast
@@ -321,7 +321,8 @@
 				vimcmd_replace_symbol = "[](bold fg:color_purple)";
 				vimcmd_visual_symbol = "[](bold fg:color_yellow)";
 		  };
-
+		};
+	};	
 	programs.fzf = {
 		enable = true;
 		enableZshIntegration = true;
