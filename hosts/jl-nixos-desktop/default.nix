@@ -51,15 +51,12 @@
       options = [ "defaults" ];
   };
 
-<<<<<<< HEAD
-=======
   fileSystems."/home/jordanl/Extra" = {
       device = "/dev/disk/by-uuid/b93b2fa6-4a76-4cd7-85f9-fd035d2f11a4";
       fsType = "ext4";
       options = [ "defaults" ];
   };
 
->>>>>>> 7d8dfe7 (simplified setup)
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.jordanl = {
     isNormalUser = true;

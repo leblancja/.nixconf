@@ -1,20 +1,5 @@
 {  config, pkgs, lib, ... }: 
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
-let
-
-  treesitterWithGrammars = pkgs.vimPlugins.nvim-treesitter.withAllGrammars;
-
-  treesitter-parsers = pkgs.symlinkJoin {
-    name = "treesitter-parsers";
-    paths = treesitterWithGrammars.dependencies;
-  };
-in
->>>>>>> 7d8dfe7 (simplified setup)
-=======
->>>>>>> 27d4922 (add libvirt)
 {
   home = {
     username = "jordanl";
@@ -55,6 +40,7 @@ in
       prismlauncher
       reaper
       godot_4
+	  itch
     ];
   };
 
@@ -335,15 +321,7 @@ in
 				vimcmd_replace_symbol = "[](bold fg:color_purple)";
 				vimcmd_visual_symbol = "[](bold fg:color_yellow)";
 		  };
-<<<<<<< HEAD
-	};
 
-    };
-=======
-	  };
-  };
-
->>>>>>> 7d8dfe7 (simplified setup)
 	programs.fzf = {
 		enable = true;
 		enableZshIntegration = true;
@@ -367,16 +345,8 @@ in
 			package = pkgs.kanagawa-icon-theme;
 		};
 	};
-	
-<<<<<<< HEAD
-	programs.neovim {
-		plugins = [
-   			pkgs.vimPlugins.nvim-treesitter.withAllGrammars
- 		];
 
-	};
-	
-=======
+
 	programs.neovim = {
 		enable = true;
     vimAlias = true;
@@ -392,13 +362,4 @@ in
     enableZshIntegration = true;
   };
 
-
-<<<<<<< HEAD
-  home.file."./.local/share/nvim/nix/nvim-treesitter/" = {
-    recursive = true;
-    source = treesitterWithGrammars;
-  };
->>>>>>> 7d8dfe7 (simplified setup)
-=======
->>>>>>> 27d4922 (add libvirt)
 }
