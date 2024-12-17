@@ -40,9 +40,10 @@
       prismlauncher
       reaper
       godot_4
-	  itch
-	  seahorse
-	  dotnetCorePackages.dotnet_9.sdk
+	    itch
+	    seahorse
+	    dotnetCorePackages.dotnet_9.sdk
+      calibre
     ];
   };
 
