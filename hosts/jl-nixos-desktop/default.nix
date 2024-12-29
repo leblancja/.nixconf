@@ -48,7 +48,7 @@
   users.users.jordanl = {
     isNormalUser = true;
     description = "Jordan LeBlanc";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd"];
+    extraGroups = [ "networkmanager" "wheel" ];
     home = "/home/jordanl";
     shell = pkgs.zsh;
   };
@@ -74,7 +74,6 @@
     protontricks
   ];
 
-  virtualisation.libvirtd.enable=true;
   environment.variables.EDITOR = "vim";
   services.flatpak.enable = true;
 
