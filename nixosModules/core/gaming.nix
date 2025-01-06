@@ -13,6 +13,8 @@
     protonup
     heroic
     wine-staging
+    protontricks
+    gamescope
   ];
 
   environment.sessionVariables = {

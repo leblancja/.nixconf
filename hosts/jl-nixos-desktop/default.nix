@@ -48,7 +48,7 @@
   users.users.jordanl = {
     isNormalUser = true;
     description = "Jordan LeBlanc";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd"] ;
     home = "/home/jordanl";
     shell = pkgs.zsh;
   };
@@ -71,9 +71,9 @@
 	  xsel
 	  zsh
 	  direnv
-    protontricks
-  ];
 
+  ];
+  
   environment.variables.EDITOR = "vim";
   services.flatpak.enable = true;
 

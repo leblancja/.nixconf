@@ -5,6 +5,7 @@
     ./audio.nix
     ./fonts.nix
     ./gaming.nix
+    ./virt.nix
   ]; 
 
 }
