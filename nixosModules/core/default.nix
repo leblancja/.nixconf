@@ -5,8 +5,8 @@
     ./audio.nix
     ./fonts.nix
     ./gaming.nix
-    ./virt.nix
-    ./dotnet.nix
+    #./virt.nix
+    #./dotnet.nix
   ]; 
 
 }

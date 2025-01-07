@@ -72,7 +72,8 @@
 	  zsh
 	  direnv
   ];
-
+  
+  programs.nix-ld.enable = true;
   environment.variables.EDITOR = "vim";
   services.flatpak.enable = true;
 
