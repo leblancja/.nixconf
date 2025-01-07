@@ -6,6 +6,7 @@
     ./fonts.nix
     ./gaming.nix
     ./virt.nix
+    ./dotnet.nix
   ]; 
 
 }
