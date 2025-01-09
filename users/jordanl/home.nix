@@ -1,4 +1,4 @@
-{ pkgs, ... }: 
+{ pkgs, nixvim, ... }: 
 {
   imports = [
     ../../homeModules/core.nix
