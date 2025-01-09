@@ -38,18 +38,19 @@
       gtk-engine-murrine
       gnome-themes-extra
       prismlauncher
-      reaper
-	    itch
-	    seahorse
+      itch
+      seahorse
       calibre
-	    ckb-next
-		virt-manager
+	virt-manager
+	postman
     ];
   };
 
   programs.home-manager.enable = true;
   nixpkgs.config.allowUnfree = true;
   
+  
+
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;

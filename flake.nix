@@ -1,5 +1,5 @@
 {
-  description = "Personal Desktop PC";
+  description = "NixOS Configuration";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -9,23 +9,28 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+  outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
 
-    nixosConfigurations.jl-nixos-desktop = nixpkgs.lib.nixosSystem {
+    nixosConfigurations = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
       system = "x86_64-linux";
       modules = [
-        ./hosts/jl-nixos-desktop/default.nix
-	      ./nixosModules
-
-	      home-manager.nixosModules.home-manager
-	      {
-	        home-manager.useGlobalPkgs = true;
-	        home-manager.useUserPackages = true;
-	        home-manager.users.jordanl = import ./hosts/jl-nixos-desktop/home.nix;
-	      }
+		./hosts/jl-desktop/default.nix
+		./nixosModules
+	      	home-manager.nixosModules.home-manager
+	      	{
+	        	home-manager.useGlobalPkgs = true;
+	        	home-manager.useUserPackages = true;
+	        	home-manager.users.jordanl = import ./hosts/jl-desktop/home.nix;
+	      	}
+	      
       ];
     };
   };

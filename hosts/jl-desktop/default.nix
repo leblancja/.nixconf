@@ -25,7 +25,7 @@
       ../../nixosModules/services
     ];
 
-  networking.hostName = "jl-nixos-desktop"; # Define your hostname.
+  networking.hostName = "jl-desktop"; # Define your hostname.
   
   networking.networkmanager.enable = true;
   time.timeZone = "America/Moncton";
