@@ -11,6 +11,8 @@
     ./plugins/mini.nix
     ./plugins/telescope.nix
     ./plugins/gitsigns.nix
+    ./plugins/undotree.nix
+    ./pluins/autopairs.nix
     
   ];
 }
