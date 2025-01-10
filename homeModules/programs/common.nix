@@ -1,4 +1,4 @@
-{ lib, pkgs,... }:
+{ lib, pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -42,4 +42,5 @@
     prismlauncher
     itch
   ];
+
 }
