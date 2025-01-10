@@ -5,6 +5,7 @@
     ../../homeModules/shell
     ../../homeModules/programs
     ../../homeModules/gnome
+    ../../homeModules/nixvim
     nixvim.homeManagerModules.nixvim
   ];
 
