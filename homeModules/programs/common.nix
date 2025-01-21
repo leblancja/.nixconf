@@ -18,7 +18,7 @@
     cargo
     rebar3
     kitty
-
+    btop
 
     #dev
     go

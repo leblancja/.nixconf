@@ -22,6 +22,8 @@
           "typescript"
           "go"
           "python"
+          "svelte"
+          "nix"
         ];
 
         highlight = {

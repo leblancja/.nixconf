@@ -12,7 +12,7 @@
     ./plugins/telescope.nix
     ./plugins/gitsigns.nix
     ./plugins/undotree.nix
-    ./pluins/autopairs.nix
-    
+    ./plugins/autopairs.nix
+    ./plugins/neotree.nix
   ];
 }

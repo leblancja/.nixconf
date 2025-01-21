@@ -1,13 +1,187 @@
-{ config, pkgs, lib, ...}:
+{ lib, ...}:
 
 {
   programs.starship = {
 		enable = true;
 		enableZshIntegration = true;
 		settings = {
-		  "$schema" = "https://starship.rs/config-schema.json";
 
-		  format = lib.concatStrings [
+			buf = {
+				format = "(with [$symbol($version )]($style))";
+			};
+
+			bun = {
+				format = "(via [$symbol($version )]($style))";
+			};
+
+			c = {
+				format = "(via [$symbol($version(-$name) )]($style))";
+			};
+
+			cmake = {
+				format = "(via [$symbol($version )]($style))";
+			};
+
+			cobol = {
+				format = "(via [$symbol($version )]($style))";
+			};
+
+			crystal = {
+				format = "(via [$symbol($version )]($style))";
+			};
+
+			daml = {
+				format = "(via [$symbol($version )]($style))";
+			};
+
+			dart = {
+				format = "(via [$symbol($version )]($style))";
+			};
+
+			deno = {
+				format = "(via [$symbol($version )]($style))";
+			};
+
+			dotnet = {
+				format = "(via [$symbol($version )(🎯 $tfm )]($style))";
+			};
+
+			elixir = {
+				format = "(via [$symbol($version \(OTP $otp_version\) )]($style))";
+			};
+
+			elm = {
+				format = "(via [$symbol($version )]($style))";
+			};
+
+			erlang = {
+				format = "(via [$symbol($version )]($style))";
+			};
+
+			fennel = {
+				format = "(via [$symbol($version )]($style))";
+			};
+
+			gleam = {
+				format = "(via [$symbol($version )]($style))";
+			};
+
+			golang = {
+				format = "(via [$symbol($version )]($style))";
+			};
+
+			haskell = {
+				format = "(via [$symbol($version )]($style))";
+			};
+
+			helm = {
+				format = "(via [$symbol($version )]($style))";
+			};
+
+			java = {
+				format = "(via [$symbol($version )]($style))";
+			};
+
+			julia = {
+				format = "(via [$symbol($version )]($style))";
+			};
+
+			kotlin = {
+				format = "(via [$symbol($version )]($style))";
+			};
+
+			lua = {
+				format = "(via [$symbol($version )]($style))";
+			};
+
+			nim = {
+				format = "(via [$symbol($version )]($style))";
+			};
+
+			nodejs = {
+				format = "(via [$symbol($version )]($style))";
+			};
+
+			ocaml = {
+				format = "(via [$symbol($version )(\($switch_indicator$switch_name\) )]($style))";
+			};
+
+			opa = {
+				format = "(via [$symbol($version )]($style))";
+			};
+
+			package = {
+				format = "(is [$symbol$version]($style) )";
+			};
+
+			perl = {
+				format = "(via [$symbol($version )]($style))";
+			};
+
+			php = {
+				format = "(via [$symbol($version )]($style))";
+			};
+
+			purescript = {
+				format = "(via [$symbol($version )]($style))";
+			};
+
+			python = {
+				format = "(via [\${symbol}\${pyenv_prefix}(\${version} )(\($virtualenv\) )]($style))";
+			};
+
+			quarto = {
+				format = "(via [$symbol($version )]($style))";
+			};
+
+			raku = {
+				format = "(via [$symbol($version-$vm_version )]($style))";
+			};
+
+			red = {
+				format = "(via [$symbol($version )]($style))";
+			};
+
+			rlang = {
+				format = "(via [$symbol($version )]($style))";
+			};
+
+			ruby = {
+				format = "(via [$symbol($version )]($style))";
+			};
+
+			rust = {
+				format = "(via [$symbol($version )]($style))";
+			};
+
+			scala = {
+				format = "(via [$symbol($version )]($style))";
+			};
+
+			swift = {
+				format = "(via [$symbol($version )]($style))";
+			};
+
+			typst = {
+				format = "(via [$symbol($version )]($style))";
+			};
+
+			vagrant = {
+				format = "(via [$symbol($version )]($style))";
+			};
+
+			vlang = {
+				format = "(via [$symbol($version )]($style))";
+			};
+
+			zig = {
+				format = "(via [$symbol($version )]($style))";
+			};		
+		};
+		/* settings = {
+		  ""$schema"" = "https://starship.rs/config-schema.json";
+
+		  format = lib.concatstrings [
 				"[ ](color_red)"
 				"$os"
 				"$username"
@@ -34,47 +208,94 @@
 				"[ ](fg:color_bg1)"
 				"$line_break$character"
 		  ];
+
+		format = lib.concatStrings [
+				"(with [$symbol($version )]($style))"
+				"(via [$symbol($version )]($style))"
+				"(via [$symbol($version(-$name) )]($style))"
+				"(via [$symbol($version )]($style))"
+				"(via [$symbol($version )]($style))"
+				"(via [$symbol($version )]($style))"
+				"(via [$symbol($version )]($style))"
+				"(via [$symbol($version )]($style)"
+				"(via [$symbol($version )]($style))"
+				"(via [$symbol($version )(🎯 $tfm )]($style))"
+				"(via [$symbol($version \(OTP $otp_version\) )]($style))"
+				"(via [$symbol($version )]($style))"
+				"(via [$symbol($version )]($style))"
+				"(via [$symbol($version )]($style))"
+				"(via [$symbol($version )]($style))"
+				"(via [$symbol($version )]($style))"
+				"(via [$symbol($version )]($style))"
+				"(via [$symbol($version )]($style))"
+				"(via [$symbol($version )]($style))"
+				"(via [$symbol($version )]($style))"
+				"(via [$symbol($version )]($style))"
+				"(via [$symbol($version )]($style))"
+				"(via [$symbol($version )]($style))"
+				"(via [$symbol($version )]($style))"
+				"(via [$symbol($version )(\($switch_indicator$switch_name\) )]($style))"
+				"(via [$symbol($version )]($style))"
+				"(is [$symbol$version]($style) )"
+				"(via [$symbol($version )]($style))"
+				"(via [$symbol($version )]($style))"
+				"(via [$symbol($version )]($style))"
+				"(via [\${symbol}\${pyenv_prefix}(\${version} )(\($virtualenv\) )]($style))"
+				"(via [$symbol($version )]($style))"
+				"(via [$symbol($version-$vm_version )]($style))"
+				"(via [$symbol($version )]($style))"
+				"(via [$symbol($version )]($style))"
+				"(via [$symbol($version )]($style))"
+				"(via [$symbol($version )]($style))"
+				"(via [$symbol($version )]($style))"
+				"(via [$symbol($version )]($style))"
+				"(via [$symbol($version )]($style))"
+				"(via [$symbol($version )]($style))"
+				"(via [$symbol($version )]($style))"
+				"(via [$symbol($version )]($style))"
+			];
+	
 		  palette = "kanagawa";
 
 		  palettes.kanagawa = {
-				color_fg0 = "#DCD7BA";  # Light text color
-				color_fg1 = "#2A2A37";
-        		color_bg1 = "#2A2A37";  # Slightly lighter dark background (reverted)
-	 			color_bg3 = "#363646";  # Kept as is
-        		color_blue = "#5D87C7";
-				color_aqua = "#4D7B72";
-				color_green = "#98BB6C";
-				color_orange = "#E46826";  # Darker orange for better contrast
-				color_purple = "#957FB8";
-				color_red = "#D84141";  # Kept the brighter red
-				color_yellow = "#E6C384";		      
+				color_fg0 = "#dcd7ba";  # light text color
+				color_fg1 = "#2a2a37";
+				color_bg1 = "#2a2a37";  # slightly lighter dark background (reverted)
+	 			color_bg3 = "#363646";  # kept as is
+				color_blue = "#5d87c7";
+				color_aqua = "#4d7b72";
+				color_green = "#98bb6c";
+				color_orange = "#e46826";  # darker orange for better contrast
+				color_purple = "#957fb8";
+				color_red = "#d84141";  # kept the brighter red
+				color_yellow = "#e6c384";		      
 			};
 
 		  os = {
 				disabled = false;
 				style = "bg:color_red fg:color_fg0";
 				symbols = {
-					Windows = "󰍲";
-					Ubuntu = "󰕈";
-					SUSE = "";
-					Raspbian = "󰐿";
-					Mint = "󰣭";
-					Macos = "󰀵";
-					Manjaro = "";
-					Linux = "󰌽";
-					Gentoo = "󰣨";
-					Fedora = "󰣛";
-					Alpine = "";
-					Amazon = "";
-					Android = "";
-					Arch = "󰣇";
-					Artix = "󰣇";
-					EndeavourOS = "";
-					CentOS = "";
-					Debian = "󰣚";
-					Redhat = "󱄛";
-					RedHatEnterprise = "󱄛";
-					Pop = "";
+					windows = "󰍲";
+					ubuntu = "󰕈";
+					suse = "";
+					raspbian = "󰐿";
+					mint = "󰣭";
+					macos = "󰀵";
+					manjaro = "";
+					linux = "󰌽";
+					gentoo = "󰣨";
+					fedora = "󰣛";
+					alpine = "";
+					amazon = "";
+					android = "";
+					arch = "󰣇";
+					artix = "󰣇";
+					endeavouros = "";
+					centos = "";
+					debian = "󰣚";
+					redhat = "󱄛";
+					redhatenterprise = "󱄛";
+					pop = "";
 				};
 		  };
 
@@ -91,11 +312,11 @@
 				truncation_length = 3;
 				truncation_symbol = "…/";
 				substitutions = {
-			  	Documents = "󰈙 ";
-			  	Downloads = " ";
-			  	Music = "󰝚 ";
-			  	Pictures = " ";
-			  	Developer = "󰲋 ";
+			  	documents = "󰈙 ";
+			  	downloads = " ";
+			  	music = "󰝚 ";
+			  	pictures = " ";
+			  	developer = "󰲋 ";
 				};
 		  };
 
@@ -186,13 +407,13 @@
 
 		  character = {
 				disabled = false;
-				success_symbol = "[](bold fg:color_green)";
-				error_symbol = "[](bold fg:color_red)";
-				vimcmd_symbol = "[](bold fg:color_green)";
-				vimcmd_replace_one_symbol = "[](bold fg:color_purple)";
-				vimcmd_replace_symbol = "[](bold fg:color_purple)";
-				vimcmd_visual_symbol = "[](bold fg:color_yellow)";
-		  };
-		};
+				success_symbol = "[>](bold fg:color_green)";
+				error_symbol = "[>](bold fg:color_red)";
+				vimcmd_symbol = "[<](bold fg:color_green)";
+				vimcmd_replace_one_symbol = "[<](bold fg:color_purple)";
+				vimcmd_replace_symbol = "[<](bold fg:color_purple)";
+				vimcmd_visual_symbol = "[<](bold fg:color_yellow)";
+		  }; 
+		}; */
 	};	
 }

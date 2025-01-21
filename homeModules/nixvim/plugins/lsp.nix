@@ -78,10 +78,19 @@
         pyright = {
           enable = true;
         };
+        svelte = {
+          enable = true;
+        };
         rust_analyzer = {
           enable = true;
           installCargo = true;
           installRustc = true;
+        };
+        nil_ls = {
+          enable = true;
+        };
+        htmx = {
+          enable = true;
         };
         # ...etc. See `https://nix-community.github.io/nixvim/plugins/lsp` for a list of pre-configured LSPs
         #
@@ -92,10 +101,19 @@
         ts_ls = {
           enable = true;
         };
+        
+        emmet_language_server = {
+          enable = true;
+          filetypes = [
+            "html"
+            "CSS"
+          ];
+        };
 
         lua_ls = {
           enable = true;
 
+        
           # cmd = {
           #};
           # filetypes = {

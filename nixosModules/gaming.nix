@@ -13,13 +13,14 @@
     protonup
     heroic
     wine-staging
+    winetricks
     protontricks
     gamescope
   ];
 
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = 
-      "/home/jordanl/.steam/root/compatibilitytools.d";
+      "/home/${username}/.steam/root/compatibilitytools.d";
   };
 
   programs.gamemode.enable = true;

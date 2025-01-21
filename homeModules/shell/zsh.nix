@@ -15,11 +15,11 @@
 		initExtra = ''
 			# Set $PATH if ~/.local/bin exists
  			if [ -d "$HOME/.local/bin" ]; then
-        export PATH=$HOME/.local/bin:$PATH
-      fi
+			export PATH=$HOME/.local/bin:$PATH
+			fi
 
 			# Use emacs key bindings
-		  bindkey -e
+			bindkey -e
 
 			# Fuzzy find history
 			autoload -U up-line-or-beginning-search
@@ -40,14 +40,14 @@
 			bindkey "^[[1;3D" backward-word
 			bindkey "^[[1;3C" forward-word
 
-		  ${pkgs.mcfly}/bin/mcfly init zsh | source /dev/stdin
+			${pkgs.mcfly}/bin/mcfly init zsh | source /dev/stdin
 
 			# Run fastfetch
-			${pkgs.fastfetch}/bin/fastfetch
+			#${pkgs.fastfetch}/bin/fastfetch
 		'';
 		shellAliases = {
-		  ls = "${pkgs.eza}/bin/eza -al --color=always --group-directories-first --icons";
-		  la = "${pkgs.eza}/bin/eza -a --color=always --group-directories-first --icons";
+			ls = "${pkgs.eza}/bin/eza -al --color=always --group-directories-first --icons";
+			la = "${pkgs.eza}/bin/eza -a --color=always --group-directories-first --icons";
 			ll = "${pkgs.eza}/bin/eza -l --color=always --group-directories-first --icons";
 			lt = "${pkgs.eza}/bin/eza -aT --color=always --group-directories-first --icons";
 			"l." = "${pkgs.eza}/bin/eza -ald --color=always --group-directories-first --icons .*";
@@ -71,8 +71,8 @@
 			jctl = "journalctl -p 3 -xb";
 		};
 		plugins = [
-      {
-        name = "zsh-history-substring-search";
+			{
+			name = "zsh-history-substring-search";
         src = pkgs.fetchFromGitHub {
           owner = "zsh-users";
           repo = "zsh-history-substring-search";

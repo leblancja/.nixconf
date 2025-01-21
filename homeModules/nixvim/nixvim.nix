@@ -59,6 +59,9 @@
 
       # See `:help hlsearch`
       hlsearch = true;
+
+      tabstop = 4;
+      shiftwidth = 4;
     };
     keymaps = [
     {
