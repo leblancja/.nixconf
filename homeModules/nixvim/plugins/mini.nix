@@ -33,8 +33,7 @@
         };
 
         files = {
-          
-        }; 
+        };
 
         # ... and there is more!
         # Check out: https://github.com/echasnovski/mini.nvim
@@ -43,10 +42,10 @@
 
     keymaps = [
       {
-        mode = [ "n" ];
+        mode = ["n"];
         key = "<leader>e";
         action = "<cmd>lua MiniFiles.open()<cr>";
-          options = {
+        options = {
           desc = "Open/Close MiniFiles";
         };
       }

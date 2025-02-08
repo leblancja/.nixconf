@@ -1,6 +1,4 @@
-{ pkgs, ...}:
-
-{
+{pkgs, ...}: {
   imports = [
     ./nixvim.nix
     ./plugins/conform.nix

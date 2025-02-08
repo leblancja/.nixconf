@@ -1,6 +1,8 @@
-{ lib, pkgs, ... }:
-
 {
+  lib,
+  pkgs,
+  ...
+}: {
   home.packages = with pkgs; [
     #archives
     zip
@@ -19,7 +21,6 @@
     rebar3
     kitty
     btop
-    
 
     #dev
     jdk
@@ -35,7 +36,6 @@
     obsidian
     calibre
 
-
     #games
     prismlauncher
     itch
@@ -43,5 +43,4 @@
     #etc
     vesktop
   ];
-
 }

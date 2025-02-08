@@ -1,7 +1,8 @@
-{config, pkgs, ... }:
-
 {
-
+  config,
+  pkgs,
+  ...
+}: {
   home.packages = with pkgs; [
     kanagawa-gtk-theme
     kanagawa-icon-theme
@@ -11,15 +12,14 @@
   ];
 
   gtk = {
-		enable = true;
-		theme = {
-			name = "Kanagawa-BL";
-			package = pkgs.kanagawa-gtk-theme;
-			
-		};
-		iconTheme = {
-			name = "Kanagawa";
-			package = pkgs.kanagawa-icon-theme;
-		};
-	};
+    enable = true;
+    theme = {
+      name = "Kanagawa-BL";
+      package = pkgs.kanagawa-gtk-theme;
+    };
+    iconTheme = {
+      name = "Kanagawa";
+      package = pkgs.kanagawa-icon-theme;
+    };
+  };
 }

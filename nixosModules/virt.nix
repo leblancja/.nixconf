@@ -1,11 +1,13 @@
-{ config, pkgs, ... }:
-
 {
-    virtualisation.libvirtd = {
-        enable = true;
-    };
+  config,
+  pkgs,
+  ...
+}: {
+  virtualisation.libvirtd = {
+    enable = true;
+  };
 
-    hardware.cpu.amd.updateMicrocode = true;
+  hardware.cpu.amd.updateMicrocode = true;
 
-    virtualisation.spiceUSBRedirection.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
 }

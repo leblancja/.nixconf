@@ -15,15 +15,17 @@
     };
   };
 
-
-
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
-
+  outputs = inputs @ {
+    self,
+    nixpkgs,
+    home-manager,
+    ...
+  }: {
     nixosConfigurations = {
-      desktop-3070S = let 
+      desktop-3070S = let
         username = "jordanl";
         specialArgs = {inherit username;};
-      in 
+      in
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;
           system = "x86_64-linux";

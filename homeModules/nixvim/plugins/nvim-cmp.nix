@@ -5,7 +5,7 @@
     #    https://github.com/rafamadriz/friendly-snippets
     # https://nix-community.github.io/nixvim/plugins/friendly-snippets.html
     plugins.friendly-snippets = {
-       enable = true;
+      enable = true;
     };
 
     plugins.cmp_luasnip = {

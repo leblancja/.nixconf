@@ -1,11 +1,12 @@
-{ pkgs, config, username, ... }:
-
 {
+  pkgs,
+  config,
+  username,
+  ...
+}: {
   programs = {
-   
     librewolf = {
       enable = true;
     };
   };
-
 }

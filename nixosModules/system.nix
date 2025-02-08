@@ -1,9 +1,12 @@
-{ pkgs, lib, username, ... }:
-
 {
+  pkgs,
+  lib,
+  username,
+  ...
+}: {
   users.users.${username} = {
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" "libvirtd"];
+    extraGroups = ["networkmanager" "wheel" "libvirtd"];
   };
 
   nix.settings = {
@@ -25,10 +28,10 @@
 
   fonts = {
     packages = with pkgs; [
-  	  noto-fonts
-  	  noto-fonts-cjk-sans
+      noto-fonts
+      noto-fonts-cjk-sans
       noto-fonts-emoji
-	    nerd-fonts.fira-code 
+      nerd-fonts.fira-code
       nerd-fonts.droid-sans-mono
       nerd-fonts.jetbrains-mono
     ];
@@ -46,20 +49,20 @@
   programs.dconf.enable = true;
 
   environment.systemPackages = with pkgs; [
-	  vim
+    vim
     git
     wget
-	  curl
-	  unzip
-	  xsel
-	  zsh
+    curl
+    unzip
+    xsel
+    zsh
     neofetch
     ranger
   ];
 
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
-  
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -76,5 +79,4 @@
   services.dbus.enable = true;
 
   #environment.sessionVariables.NIXOS_OZONE_WL = "1";
-
 }

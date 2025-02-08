@@ -7,7 +7,6 @@
 
       # Document existing key chains
       settings = {
-      
       };
     };
   };

@@ -1,5 +1,8 @@
-{ pkgs,nixvim, ... }: 
 {
+  pkgs,
+  nixvim,
+  ...
+}: {
   imports = [
     ../../homeModules/core.nix
     ../../homeModules/shell
@@ -13,7 +16,7 @@
     enable = true;
   };
   programs.git = {
-		userName = "leblancja";
-		userEmail = "leblancja@outlook.com";
-	};
+    userName = "leblancja";
+    userEmail = "leblancja@outlook.com";
+  };
 }

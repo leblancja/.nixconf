@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   home.packages = with pkgs; [
     alejandra
     deadnix
@@ -14,7 +12,7 @@
   };
 
   programs.fzf = {
-		enable = true;
-		enableZshIntegration = true;
-	};
+    enable = true;
+    enableZshIntegration = true;
+  };
 }
