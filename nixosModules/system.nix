@@ -26,6 +26,7 @@
   fonts = {
     packages = with pkgs; [
   	  noto-fonts
+  	  noto-fonts-cjk-sans
       noto-fonts-emoji
 	    nerd-fonts.fira-code 
       nerd-fonts.droid-sans-mono
@@ -73,5 +74,7 @@
   };
 
   services.dbus.enable = true;
+
+  #environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
 }

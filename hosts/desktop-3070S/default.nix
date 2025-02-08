@@ -32,10 +32,7 @@
     efi.efiSysMountPoint = "/boot";
     };
 
-  boot = {
-    kernelModules = ["kvm-amd" "vfio-pci"];
-
-  };
+  zramSwap.enable = true;
 
   networking.hostName = "desktop-3070S"; # Define your hostname.
   

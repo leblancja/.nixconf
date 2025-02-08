@@ -2,17 +2,10 @@
 
 {
   programs = {
-    firefox = {
+   
+    librewolf = {
       enable = true;
-
-      policies = {
-        DisableTelemetry = true;
-        DisableFirefoxStudies = true;
-        
-        DisablePocket = true;
-        DontCheckDefaultBrowser = true;
-
-      };
     };
   };
+
 }

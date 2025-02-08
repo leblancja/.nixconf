@@ -19,19 +19,17 @@
     rebar3
     kitty
     btop
+    
 
     #dev
-    go
-    typescript
     jdk
     python3
-    nodejs
     docker
     docker-compose
     postman
 
     #IDE
-    vscode
+    vscode-fhs
 
     #productivity
     obsidian
@@ -41,6 +39,9 @@
     #games
     prismlauncher
     itch
+
+    #etc
+    vesktop
   ];
 
 }

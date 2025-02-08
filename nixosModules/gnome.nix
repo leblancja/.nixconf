@@ -15,5 +15,9 @@
 
   services.gnome.gnome-keyring.enable = true;
   programs.ssh.startAgent = false;
+
+  environment.systemPackages = with pkgs.gnomeExtensions; [
+    tiling-assistant
+  ];
   
 }

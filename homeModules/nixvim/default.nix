@@ -13,6 +13,7 @@
     ./plugins/gitsigns.nix
     ./plugins/undotree.nix
     ./plugins/autopairs.nix
-    ./plugins/neotree.nix
+    ./plugins/dap.nix
+    # ./plugins/neotree.nix
   ];
 }

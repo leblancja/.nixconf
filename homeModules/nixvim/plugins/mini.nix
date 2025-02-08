@@ -32,10 +32,25 @@
           use_icons.__raw = "vim.g.have_nerd_font";
         };
 
+        files = {
+          
+        }; 
+
         # ... and there is more!
         # Check out: https://github.com/echasnovski/mini.nvim
       };
     };
+
+    keymaps = [
+      {
+        mode = [ "n" ];
+        key = "<leader>e";
+        action = "<cmd>lua MiniFiles.open()<cr>";
+          options = {
+          desc = "Open/Close MiniFiles";
+        };
+      }
+    ];
 
     # You can configure sections in the statusline by overriding their
     # default behavior. For example, here we set the section for

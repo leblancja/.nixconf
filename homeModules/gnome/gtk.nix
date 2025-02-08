@@ -5,9 +5,9 @@
   home.packages = with pkgs; [
     kanagawa-gtk-theme
     kanagawa-icon-theme
-    gtk-engine-murrine
-    gnome-themes-extra
-    gnome-tweaks
+    # gtk-engine-murrine
+    # gnome-themes-extra
+    # gnome-tweaks
   ];
 
   gtk = {
