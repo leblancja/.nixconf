@@ -16,6 +16,14 @@
       enable = true;
     };
 
+    plugins.cmp-buffer = {
+      enable = true;
+    };
+
+    plugins.cmp-nvim-lua = {
+      enable = true;
+    };
+
     # Autocompletion
     # See `:help cmp`
     # https://nix-community.github.io/nixvim/plugins/cmp/index.html

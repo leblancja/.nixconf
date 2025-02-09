@@ -12,6 +12,7 @@
     ./plugins/undotree.nix
     ./plugins/autopairs.nix
     ./plugins/dap.nix
+    ./plugins/harpoon.nix
     # ./plugins/neotree.nix
   ];
 }

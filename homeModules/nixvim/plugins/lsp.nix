@@ -107,6 +107,14 @@
           enable = true;
         };
 
+        html = {
+          enable = true;
+        };
+
+        jdtls = {
+          enable = true;
+        };
+
         # ...etc. See `https://nix-community.github.io/nixvim/plugins/lsp` for a list of pre-configured LSPs
         #
         # Some languages (like typscript) have entire language plugins that can be useful:
@@ -120,8 +128,6 @@
         emmet_language_server = {
           enable = true;
           filetypes = [
-            "html"
-            "CSS"
             "javascriptreact"
             "typescriptreact"
           ];

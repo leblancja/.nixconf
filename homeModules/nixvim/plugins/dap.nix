@@ -7,6 +7,20 @@
     plugins.dap-ui = {
       enable = true;
     };
+
+    autoCmd = [
+      {
+        event = ["FileType"];
+        desc = "Quit floating DAP-UI windows";
+        pattern = ["dap-float"];
+        callback.__raw = ''
+          function()
+            vim.api.nvim_buf_set_keymap(0,"n", "q", "<cmd>close!<CR>",{noremap=true,silent=true})
+            end
+        '';
+      }
+    ];
+
     keymaps = [
       {
         key = "<Leader>du";
@@ -133,5 +147,6 @@
         };
       }
     ];
+
   };
 }
