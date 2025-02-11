@@ -13,6 +13,7 @@
     ./plugins/autopairs.nix
     ./plugins/dap.nix
     ./plugins/harpoon.nix
+    ./plugins/toggleterm.nix
     # ./plugins/neotree.nix
   ];
 }

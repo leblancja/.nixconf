@@ -25,6 +25,7 @@
       have_nerd_font = true;
     };
 
+    
     opts = {
       number = true;
       relativenumber = true;

@@ -120,6 +120,9 @@
           {
             name = "path";
           }
+          {
+            name = "buffer";
+          }
         ];
       };
     };
