@@ -9,7 +9,6 @@
     plugins.cmp-nvim-lsp = {
       enable = true;
     };
-
     # Useful status updates for LSP.
     # https://nix-community.github.io/nixvim/plugins/fidget/index.html
     plugins.fidget = {
@@ -21,6 +20,7 @@
       # NOTE: This is where you would add a vim plugin that is not implemented in Nixvim, also see extraConfigLuaPre below
       #
       # TODO: Add luvit-meta when Nixos package is added
+      mason-nvim
     ];
 
     # https://nix-community.github.io/nixvim/NeovimOptions/autoGroups/index.html
@@ -110,11 +110,6 @@
         html = {
           enable = true;
         };
-
-        jdtls = {
-          enable = true;
-        };
-
         # ...etc. See `https://nix-community.github.io/nixvim/plugins/lsp` for a list of pre-configured LSPs
         #
         # Some languages (like typscript) have entire language plugins that can be useful:
@@ -152,7 +147,6 @@
           };
         };
       };
-
       keymaps = {
         # Diagnostic keymaps
         diagnostic = {

@@ -23,11 +23,11 @@
     btop
 
     #dev
-    jdk
-    python3
+
     docker
     docker-compose
     postman
+    aseprite
 
     #IDE
     vscode-fhs

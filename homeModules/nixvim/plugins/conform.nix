@@ -2,6 +2,8 @@
   programs.nixvim = {
     extraPackages = with pkgs; [
       stylua
+      isort
+      black
     ];
 
     plugins.conform-nvim = {
@@ -23,6 +25,8 @@
         '';
         formatters_by_ft = {
           lua = ["stylua"];
+          nix = ["alejandra"];
+          python = ["isort" "black"];
           # Conform can also run multiple formatters sequentially
           # python = [ "isort "black" ];
           #

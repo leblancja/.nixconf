@@ -35,6 +35,21 @@
         files = {
         };
 
+        bufremove = {
+        };
+
+        pairs = {
+        };
+
+        indentscope = {
+        };
+        icons = {
+        };
+        git = {
+        };
+        diff = {
+        };
+
         # ... and there is more!
         # Check out: https://github.com/echasnovski/mini.nvim
       };
@@ -55,10 +70,10 @@
     # default behavior. For example, here we set the section for
     # cursor location to LINE:COLUMN
     # https://nix-community.github.io/nixvim/NeovimOptions/index.html?highlight=extraconfiglu#extraconfiglua
-    extraConfigLua = ''
-      require('mini.statusline').section_location = function()
-        return '%2l:%-2v'
-      end
-    '';
+    # extraConfigLua = ''
+    #   require('mini.statusline').section_location = function()
+    #     return '%2l:%-2v'
+    #   end
+    # '';
   };
 }

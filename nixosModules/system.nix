@@ -6,9 +6,9 @@
 }: {
   users.users.${username} = {
     isNormalUser = true;
-    extraGroups = ["networkmanager" "wheel" "libvirtd"];
+    extraGroups = ["networkmanager" "wheel" "libvirtd" "docker"];
   };
-
+  networking.firewall.allowedTCPPorts = [3306]; # Or the mapped port
   nix.settings = {
     experimental-features = ["nix-command" "flakes"];
   };
@@ -78,5 +78,8 @@
 
   services.dbus.enable = true;
 
+  virtualisation.docker = {
+    enable = true;
+  };
   #environment.sessionVariables.NIXOS_OZONE_WL = "1";
 }

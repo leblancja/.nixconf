@@ -25,7 +25,6 @@
       have_nerd_font = true;
     };
 
-    
     opts = {
       number = true;
       relativenumber = true;
@@ -604,9 +603,5 @@
         enable = true;
       };
     };
-
-    extraPlugins = with pkgs; [
-      vimPlugins.nvim-java
-    ];
   };
 }
