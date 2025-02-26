@@ -20,8 +20,9 @@
   imports = [
     ../../nixosModules/system.nix
     ../../nixosModules/gnome.nix
+    #../../nixosModules/sway.nix
     ../../nixosModules/gaming.nix
-
+    ../..nixosModules/hyprland.nix
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
@@ -62,9 +63,11 @@
     powerManagement.finegrained = false;
     open = false;
     nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.latest;
   };
 
-  programs.nix-ld.enable = true;
+  #programs.nix-ld.enable = true;
   services.flatpak.enable = true;
+
+  musnix.enable = true;
 }

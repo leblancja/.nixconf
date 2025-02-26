@@ -3,7 +3,7 @@
   users.users.jordanl = {
     isNormalUser = true;
     description = "Jordan LeBlanc";
-    extraGroups = ["networkmanager" "wheel" "libvirtd"];
+    extraGroups = ["networkmanager" "wheel" "docker"];
     home = "/home/jordanl";
     shell = pkgs.zsh;
   };

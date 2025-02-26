@@ -5,7 +5,7 @@
 }: {
   home.packages = with pkgs; [
     kanagawa-gtk-theme
-    kanagawa-icon-theme
+    #kanagawa-icon-theme
     # gtk-engine-murrine
     # gnome-themes-extra
     # gnome-tweaks
@@ -17,9 +17,9 @@
       name = "Kanagawa-BL";
       package = pkgs.kanagawa-gtk-theme;
     };
-    iconTheme = {
-      name = "Kanagawa";
-      package = pkgs.kanagawa-icon-theme;
-    };
+    # iconTheme = {
+    #   name = "Kanagawa";
+    #   package = pkgs.kanagawa-icon-theme;
+    # };
   };
 }

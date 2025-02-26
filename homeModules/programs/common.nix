@@ -42,5 +42,7 @@
 
     #etc
     vesktop
+    reaper
+    yabridge
   ];
 }

@@ -13,6 +13,14 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    musnix = {
+      url = "github:musnix/musnix";
+    };
+
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+    };
   };
 
   outputs = inputs @ {
@@ -24,7 +32,7 @@
     nixosConfigurations = {
       desktop-3070S = let
         username = "jordanl";
-        specialArgs = {inherit username;};
+        specialArgs = {inherit username inputs;};
       in
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;
@@ -33,6 +41,7 @@
           modules = [
             ./hosts/desktop-3070S
             ./users/${username}/nixos.nix
+            inputs.musnix.nixosModules.musnix
 
             home-manager.nixosModules.home-manager
             {
