@@ -44,5 +44,6 @@
     vesktop
     reaper
     yabridge
+    inkscape-with-extensions
   ];
 }

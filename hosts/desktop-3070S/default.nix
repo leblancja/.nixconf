@@ -22,7 +22,7 @@
     ../../nixosModules/gnome.nix
     #../../nixosModules/sway.nix
     ../../nixosModules/gaming.nix
-    ../..nixosModules/hyprland.nix
+    #../../nixosModules/hyprland.nix
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];

@@ -8,6 +8,7 @@
     ../../homeModules/shell
     ../../homeModules/programs
     ../../homeModules/gnome
+    #../../homeModules/hyprland
     ../../homeModules/nixvim
     nixvim.homeManagerModules.nixvim
   ];
