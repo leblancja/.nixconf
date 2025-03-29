@@ -10,12 +10,11 @@
 }: {
   system.stateVersion = "24.05";
 
-  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
-  boot.extraModulePackages = with config.boot.kernelPackages; [bbswitch];
-  boot.kernelParams = [
-    "nvidia-drm.fbdev=1"
-    "initcall_blacklist=simpledrm_platform_driver_init"
-  ];
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.kernelParams = [
+  #   "nvidia-drm.fbdev=1"
+  #   "initcall_blacklist=simpledrm_platform_driver_init"
+  # ];
 
   imports = [
     ../../nixosModules/system.nix

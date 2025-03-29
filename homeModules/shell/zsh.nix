@@ -73,6 +73,82 @@
       jctl = "journalctl -p 3 -xb";
       cdev = "cd ~/Extra/dev";
       nupdate = "nix flake update --flake /home/jordanl/.nixconf";
+
+      #git aliases
+      ga = "git add";
+      gaa = "git add --all";
+      gapa = "git add --patch";
+      gc = "git commit -v";
+      gcr = "git commit -v --amend";
+      gca = "git commit -v -a";
+      gcar = "git commit -v -a --amend";
+      gcam = "git commit -a -m";
+      gcsm = "git commit -s -m";
+      gcmsg = "git commit -m";
+      gcs = "git commit -S";
+
+      gco = "git checkout";
+      gcd = "git checkout develop";
+      gcm = "git checkout master";
+      gcb = "git checkout -b";
+      bgnm = "git branch --no-merged";
+      gbr = "git branch --remote";
+      ggsup = "git branch --set-upstream-to=origin/$(current_branch)";
+
+      glg = "git log --stat --max-count = 10";
+
+      gcl = "git clone --recursive";
+      gp = "git push";
+      ggp = "git push origin $(current_branch)";
+      gpsup = "git push --set-upstream origin $(current_branch)";
+
+      gf = "git fetch";
+      gfa = "git fetch --all --prune";
+      gfo = "git fetch origin";
+      ggl = "git pull origin $(current_branch)";
+      gup = "git pull --rebase";
+      gm = "git merge";
+      gmom = "git merge origin/master";
+
+      gr = "git remote";
+      grv = "git remote -v";
+      grmv = "git remote rename";
+      grrm = "git remote remove";
+      grset = "git remote set-url";
+      grup = "git remote update";
+
+      gs = "git status";
+      gss = "git status -s";
+      gsta = "git stash save";
+      gstaa = "git stash apply";
+      gstd = "git stash drop";
+      gstl = "git stash list";
+      grh = "git reset HEAD";
+      grhh = "git reset HEAD --hard";
+      gclean = "git clean -fd";
+      gpristine = "git reset --hard && git clean -dfx";
+
+      grbi = "git rebase -i";
+      grba = "git rebase --abort";
+      grbc = "git rebase --continue";
+      grbs = "git rebase --skip";
+      gcp = "git cherry-pick";
+      gcpa = "git cherry-pick --abort";
+      gcpc = "git cherry-pick --continue";
+
+      gbl = "git blame";
+      gbs = "git bisect";
+      gbsb = "git bisect bad";
+      gbsg = "git bisect good";
+      gbsr = "git bisect reset";
+      gbss = "git bisect start";
+      gd = "git diff";
+      gdca = "git diff --cached";
+      gwch = "git whatchanged -p --abbrev-commit --pretty = medium";
+
+      gg = "git gui citool";
+      gga = "git gui citool --amend";
+      gk = "gitk --all --branches";
     };
     plugins = [
       {

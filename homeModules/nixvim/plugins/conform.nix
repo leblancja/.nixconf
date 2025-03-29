@@ -27,6 +27,10 @@
           lua = ["stylua"];
           nix = ["alejandra"];
           python = ["isort" "black"];
+          javacscript = ["prettier"];
+          typescript = ["prettier"];
+          javascriptreact = ["prettier"];
+          typescriptreact = ["prettier"];
           # Conform can also run multiple formatters sequentially
           # python = [ "isort "black" ];
           #

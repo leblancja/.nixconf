@@ -13,11 +13,11 @@
   environment.systemPackages = with pkgs; [
     mangohud
     protonup
-    heroic
     wine-staging
     winetricks
     protontricks
     gamescope
+    lutris
   ];
 
   environment.sessionVariables = {

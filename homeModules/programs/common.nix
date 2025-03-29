@@ -1,8 +1,4 @@
-{
-  lib,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
     #archives
     zip
@@ -28,6 +24,11 @@
     docker-compose
     postman
     aseprite
+    blender
+    godot
+    gimp-with-plugins
+    blockbench
+    krita
 
     #IDE
     vscode-fhs

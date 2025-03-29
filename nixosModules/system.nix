@@ -19,7 +19,10 @@
   time.timeZone = "America/Moncton";
   i18n.defaultLocale = "en_CA.UTF-8";
 
-  services.printing.enable = true;
+  services.printing = {
+    enable = true;
+    drivers = [pkgs.hplip];
+  };
 
   fonts = {
     packages = with pkgs; [
