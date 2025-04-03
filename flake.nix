@@ -40,7 +40,6 @@
 
           modules = [
             ./hosts/desktop-3070S
-            ./users/${username}/nixos.nix
             inputs.musnix.nixosModules.musnix
 
             home-manager.nixosModules.home-manager
