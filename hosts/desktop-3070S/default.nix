@@ -17,7 +17,7 @@
   # ];
 
   imports = [
-    ../../nixosModules/system.nix
+    ../../hosts/desktop-3070S/system.nix
     ../../nixosModules/gnome.nix
     #../../nixosModules/sway.nix
     ../../nixosModules/gaming.nix
