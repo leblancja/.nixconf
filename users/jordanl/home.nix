@@ -4,12 +4,6 @@
   username,
   ...
 }: {
-  users.users.${username} = {
-    isNormalUser = true;
-    extraGroups = ["networkmanager" "wheel" "docker"];
-    home = "/home/${username}";
-    shell = pkgs.zsh;
-  };
   imports = [
     ../../homeModules/core.nix
     ../../homeModules/shell

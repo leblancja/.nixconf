@@ -32,7 +32,7 @@
     nixosConfigurations = {
       desktop-3070S = let
         username = "jordanl";
-        specialArgs = {inherit username inputs;};
+        specialArgs = {inherit username;};
       in
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;
@@ -47,6 +47,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "backup";
+
               home-manager.extraSpecialArgs = inputs // specialArgs;
               home-manager.users.${username} = import ./users/${username}/home.nix;
             }
