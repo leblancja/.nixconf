@@ -11,7 +11,7 @@
     #./plugins/gitsigns.nix
     ./plugins/undotree.nix
     #./plugins/autopairs.nix
-    ./plugins/dap.nix
+    #./plugins/dap.nix
     #./plugins/harpoon.nix
     ./plugins/toggleterm.nix
     # ./plugins/neotree.nix

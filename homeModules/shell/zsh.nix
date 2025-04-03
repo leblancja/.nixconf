@@ -16,7 +16,7 @@
     };
     initExtra = ''
       # Set $PATH if ~/.local/bin exists
-      	if [ -d "$HOME/.local/bin" ]; then
+      if [ -d "$HOME/.local/bin" ]; then
       export PATH=$HOME/.local/bin:$PATH
       fi
 
@@ -68,11 +68,13 @@
       fgrep = "grep -F --color=auto";
       egrep = "grep -E --color=auto";
       ip = "ip -color";
-      nrebuild = "sudo nixos-rebuild switch --flake /home/jordanl/.nixconf#desktop-3070S --upgrade";
-      cleanup = "sudo nix-collect-garbage -d";
+      nixb = "sudo nixos-rebuild switch --flake /home/jordanl/.nixconf#desktop-3070S --upgrade";
+      nixclean = "sudo nix-collect-garbage -d";
       jctl = "journalctl -p 3 -xb";
-      cdev = "cd ~/Extra/dev";
-      nupdate = "nix flake update --flake /home/jordanl/.nixconf";
+      dev = "cd ~/Extra/dev";
+      devw = "cd ~/Extra/dev/web";
+      nixup = "nix flake update --flake /home/jordanl/.nixconf";
+      nixed = "cd ~/.nixconf && nvim";
 
       #git aliases
       ga = "git add";
@@ -93,20 +95,24 @@
       gcb = "git checkout -b";
       bgnm = "git branch --no-merged";
       gbr = "git branch --remote";
-      ggsup = "git branch --set-upstream-to=origin/$(current_branch)";
+      ggsup = "!git branch --set-upstream-to=origin/$(git branch --show-current)";
 
       glg = "git log --stat --max-count = 10";
 
       gcl = "git clone --recursive";
       gp = "git push";
       ggp = "git push origin $(current_branch)";
-      gpsup = "git push --set-upstream origin $(current_branch)";
+      gpsup = "!git push --set-upstream origin $(git branch --show-current)";
 
       gf = "git fetch";
       gfa = "git fetch --all --prune";
       gfo = "git fetch origin";
-      ggl = "git pull origin $(current_branch)";
+      ggl = "!git pull origin $(git branch --show-current)";
+      ggpull = "!git pull origin $(git branch --show-current)";
+      ggpur = "git pull --rebase origin $(git branch --show-current)";
+      glum = "git pull upstream master";
       gup = "git pull --rebase";
+      ggpnp = "!git pull origin $(git branch --show-current) && !git push origin origin $(git branch --show-current)";
       gm = "git merge";
       gmom = "git merge origin/master";
 
