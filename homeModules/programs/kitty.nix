@@ -5,11 +5,16 @@
 }: {
   programs.kitty = lib.mkForce {
     enable = true;
+    actionAliases = {
+      "launch_tab" = "launch --cwd=current --type=tab";
+      "launch_window" = "launch --cwd=current --type=os-window";
+    };
     settings = {
       confirm_os_window_close = 0;
       enable_audio_bell = false;
       mouse_hide_wait = "-1.0";
 
+      linux_display_server = "auto";
       wayland_titlebar_color = "system";
 
       #Kanagawa colors

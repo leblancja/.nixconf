@@ -10,7 +10,6 @@
     shell = pkgs.zsh;
   };
 
-  networking.firewall.allowedTCPPorts = [3306]; # Or the mapped port
   nix.settings = {
     experimental-features = ["nix-command" "flakes"];
   };
@@ -39,6 +38,7 @@
       nerd-fonts.fira-code
       nerd-fonts.droid-sans-mono
       nerd-fonts.jetbrains-mono
+      material-design-icons
     ];
 
     enableDefaultPackages = false;
@@ -62,7 +62,7 @@
     fastfetch
     ranger
   ];
-
+  networking.firewall.enable = false;
   services.pulseaudio.enable = false;
 
   services.pipewire = {
@@ -71,7 +71,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
+    jack.enable = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
