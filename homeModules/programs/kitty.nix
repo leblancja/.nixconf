@@ -25,6 +25,8 @@
       enable_audio_bell = false;
       mouse_hide_wait = "-1.0";
 
+      window_padding_width = 10;
+
       linux_display_server = "auto";
       wayland_titlebar_color = "system";
 
