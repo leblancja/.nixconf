@@ -18,7 +18,7 @@
       "kitty_mod+t" = "launch_tab";
     };
 
-    themeFile = "Kanagawa";
+    themeFile = "kanagawa";
 
     settings = {
       confirm_os_window_close = 0;
