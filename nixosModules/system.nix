@@ -60,7 +60,6 @@
     xsel
     zsh
     fastfetch
-    ranger
   ];
   services.pulseaudio.enable = false;
 

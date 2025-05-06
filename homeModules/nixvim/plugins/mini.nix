@@ -64,6 +64,22 @@
           desc = "Open/Close MiniFiles";
         };
       }
+      {
+        mode = ["n"];
+        key = "<leader>bd";
+        action = "<cmd>lua MiniBufremove.delete()<cr>";
+        options = {
+          desc = "Delete the current buffer";
+        };
+      }
+      {
+        mode = ["n"];
+        key = "<leader>bu";
+        action = "<cmd>lua MiniBufremove.delete()<cr>";
+        options = {
+          desc = "Unshow the current buffer";
+        };
+      }
     ];
 
     # You can configure sections in the statusline by overriding their

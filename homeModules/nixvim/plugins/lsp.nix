@@ -16,12 +16,12 @@
     };
 
     # https://nix-community.github.io/nixvim/NeovimOptions/index.html?highlight=extraplugi#extraplugins
-    extraPlugins = with pkgs.vimPlugins; [
-      # NOTE: This is where you would add a vim plugin that is not implemented in Nixvim, also see extraConfigLuaPre below
-      #
-      # TODO: Add luvit-meta when Nixos package is added
-      mason-nvim
-    ];
+    # extraPlugins = with pkgs.vimPlugins; [
+    #   # NOTE: This is where you would add a vim plugin that is not implemented in Nixvim, also see extraConfigLuaPre below
+    #   #
+    #   # TODO: Add luvit-meta when Nixos package is added
+    #   #mason-nvim
+    # ];
 
     # https://nix-community.github.io/nixvim/NeovimOptions/autoGroups/index.html
     autoGroups = {
@@ -110,6 +110,7 @@
         html = {
           enable = true;
         };
+
         # ...etc. See `https://nix-community.github.io/nixvim/plugins/lsp` for a list of pre-configured LSPs
         #
         # Some languages (like typscript) have entire language plugins that can be useful:
@@ -151,7 +152,7 @@
         # Diagnostic keymaps
         diagnostic = {
           "<leader>q" = {
-            #mode = "n";
+            mode = "n";
             action = "setloclist";
             desc = "Open diagnostic [Q]uickfix list";
           };
@@ -259,52 +260,79 @@
       #   function will be executred to configure the current buffer
       # NOTE: This is an example of an attribute that takes raw lua
       onAttach = ''
-        -- NOTE: Remember that Lua is a real programming language, and as such it is possible
-        -- to define small helper and utility functions so you don't have to repeat yourself.
-        --
-        -- In this case, we create a function that lets us more easily define mappings specific
-        -- for LSP related items. It sets the mode, buffer and description for us each time.
-        local map = function(keys, func, desc)
-          vim.keymap.set('n', keys, func, { buffer = bufnr, desc = 'LSP: ' .. desc })
-        end
+            -- NOTE: Remember that Lua is a real programming language, and as such it is possible
+            -- to define small helper and utility functions so you don't have to repeat yourself.
+            --
+            -- In this case, we create a function that lets us more easily define mappings specific
+            -- for LSP related items. It sets the mode, buffer and description for us each time.
+            local map = function(keys, func, desc)
+              vim.keymap.set('n', keys, func, { buffer = bufnr, desc = 'LSP: ' .. desc })
+            end
 
-        -- The following two autocommands are used to highlight references of the
-        -- word under the cursor when your cursor rests there for a little while.
-        --    See `:help CursorHold` for information about when this is executed
-        --
-        -- When you move your cursor, the highlights will be cleared (the second autocommand).
-        if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
-          local highlight_augroup = vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = false })
-          vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
-            buffer = bufnr,
-            group = highlight_augroup,
-            callback = vim.lsp.buf.document_highlight,
+            -- The following two autocommands are used to highlight references of the
+            -- word under the cursor when your cursor rests there for a little while.
+            --    See `:help CursorHold` for information about when this is executed
+            --
+            -- When you move your cursor, the highlights will be cleared (the second autocommand).
+            if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
+              local highlight_augroup = vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = false })
+              vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+                buffer = bufnr,
+                group = highlight_augroup,
+                callback = vim.lsp.buf.document_highlight,
+              })
+
+              vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
+                buffer = bufnr,
+                group = highlight_augroup,
+                callback = vim.lsp.buf.clear_references,
+              })
+
+              vim.api.nvim_create_autocmd('LspDetach', {
+                group = vim.api.nvim_create_augroup('kickstart-lsp-detach', { clear = true }),
+                callback = function(event2)
+                  vim.lsp.buf.clear_references()
+                  vim.api.nvim_clear_autocmds { group = 'kickstart-lsp-highlight', buffer = event2.buf }
+                end,
+              })
+            end
+
+            -- The following autocommand is used to enable inlay hints in your
+            -- code, if the language server you are using supports them
+            --
+            -- This may be unwanted, since they displace some of your code
+            if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
+              map('<leader>th', function()
+                vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
+              end, '[T]oggle Inlay [H]ints')
+            end
+
+          function OpenDiagnosticIfNoFloat()
+            for _, winid in pairs(vim.api.nvim_tabpage_list_wins(0)) do
+            if vim.api.nvim_win_get_config(winid).zindex then
+            return
+            end
+          end
+          -- THIS IS FOR BUILTIN LSP
+          vim.diagnostic.open_float(0, {
+            scope = "cursor",
+            focusable = false,
+            close_events = {
+              "CursorMoved",
+              "CursorMovedI",
+              "BufHidden",
+              "InsertCharPre",
+              "WinLeave",
+            },
           })
-
-          vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
-            buffer = bufnr,
-            group = highlight_augroup,
-            callback = vim.lsp.buf.clear_references,
-          })
-
-          vim.api.nvim_create_autocmd('LspDetach', {
-            group = vim.api.nvim_create_augroup('kickstart-lsp-detach', { clear = true }),
-            callback = function(event2)
-              vim.lsp.buf.clear_references()
-              vim.api.nvim_clear_autocmds { group = 'kickstart-lsp-highlight', buffer = event2.buf }
-            end,
-          })
         end
-
-        -- The following autocommand is used to enable inlay hints in your
-        -- code, if the language server you are using supports them
-        --
-        -- This may be unwanted, since they displace some of your code
-        if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
-          map('<leader>th', function()
-            vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
-          end, '[T]oggle Inlay [H]ints')
-        end
+        -- Show diagnostics under the cursor when holding position
+        vim.api.nvim_create_augroup("lsp_diagnostics_hold", { clear = true })
+        vim.api.nvim_create_autocmd({ "CursorHold" }, {
+          pattern = "*",
+          command = "lua OpenDiagnosticIfNoFloat()",
+          group = "lsp_diagnostics_hold",
+        })
       '';
     };
   };

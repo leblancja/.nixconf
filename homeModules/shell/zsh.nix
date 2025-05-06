@@ -95,24 +95,24 @@
       gcb = "git checkout -b";
       bgnm = "git branch --no-merged";
       gbr = "git branch --remote";
-      ggsup = "!git branch --set-upstream-to=origin/$(git branch --show-current)";
+      ggsup = "git branch --set-upstream-to=origin/$(git branch --show-current)";
 
       glg = "git log --stat --max-count = 10";
 
       gcl = "git clone --recursive";
       gp = "git push";
       ggp = "git push origin $(current_branch)";
-      gpsup = "!git push --set-upstream origin $(git branch --show-current)";
+      gpsup = "git push --set-upstream origin $(git branch --show-current)";
 
       gf = "git fetch";
       gfa = "git fetch --all --prune";
       gfo = "git fetch origin";
-      ggl = "!git pull origin $(git branch --show-current)";
-      ggpull = "!git pull origin $(git branch --show-current)";
+      ggl = "git pull origin $(git branch --show-current)";
+      ggpull = "git pull origin $(git branch --show-current)";
       ggpur = "git pull --rebase origin $(git branch --show-current)";
       glum = "git pull upstream master";
       gup = "git pull --rebase";
-      ggpnp = "!git pull origin $(git branch --show-current) && !git push origin origin $(git branch --show-current)";
+      ggpnp = "git pull origin $(git branch --show-current) && git push origin origin $(git branch --show-current)";
       gm = "git merge";
       gmom = "git merge origin/master";
 

@@ -1,5 +1,10 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  nixvim,
+  ...
+}: {
   imports = [
+    nixvim.homeManagerModules.nixvim
     ./nixvim.nix
     ./plugins/conform.nix
     ./plugins/nvim-cmp.nix

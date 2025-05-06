@@ -38,12 +38,11 @@
 
     #games
     prismlauncher
-    itch
 
     #etc
     vesktop
     reaper
-    # yabridge
+    yabridge
     inkscape-with-extensions
   ];
 }

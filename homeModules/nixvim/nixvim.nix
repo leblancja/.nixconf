@@ -1,9 +1,4 @@
-{
-  pkgs,
-  lib,
-  nixvim,
-  ...
-}: {
+{...}: {
   programs.nixvim = {
     enable = true;
     defaultEditor = true;
@@ -12,7 +7,7 @@
       kanagawa = {
         enable = true;
         settings = {
-          theme = "dragon";
+          theme = "wave";
         };
       };
     };
@@ -28,8 +23,10 @@
     opts = {
       number = true;
       relativenumber = true;
-
+      mouse = "a";
       showmode = false;
+
+      breakindent = true;
 
       clipboard = {
         providers = {
@@ -60,11 +57,10 @@
       # Minimal number of screen lines to keep above and below the cursor
       scrolloff = 10;
 
+      confirm = true;
+
       # See `:help hlsearch`
       hlsearch = true;
-
-      tabstop = 4;
-      shiftwidth = 4;
     };
     keymaps = [
       {

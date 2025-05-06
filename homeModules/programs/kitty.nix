@@ -10,7 +10,7 @@
 
     actionAliases = {
       "launch_tab" = "launch --cwd=current --type=tab";
-      "launch_window" = "launch --cwd=current --type=os-window";
+      "launch_window" = "launch --cwd=current --type=window";
     };
 
     keybindings = {
