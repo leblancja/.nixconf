@@ -1,11 +1,9 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    #archives
+    #utils
     zip
     unzip
     p7zip
-
-    #utils
     eza
     bat
     mcfly
@@ -18,19 +16,17 @@
     btop
 
     #dev
-
+    vscode-fhs
     docker
     docker-compose
-    postman
     aseprite
+    bruno
+    bruno-cli
     blender
     godot
     gimp-with-plugins
     blockbench
     krita
-
-    #IDE
-    vscode-fhs
 
     #productivity
     obsidian

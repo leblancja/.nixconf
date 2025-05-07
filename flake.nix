@@ -21,6 +21,10 @@
     hyprland = {
       url = "github:hyprwm/Hyprland";
     };
+
+    stylix = {
+      url = "github:danth/stylix";
+    };
   };
 
   outputs = inputs @ {
@@ -41,6 +45,7 @@
           modules = [
             ./hosts/desktop-3070S
             inputs.musnix.nixosModules.musnix
+            inputs.stylix.nixosModules.stylix
 
             home-manager.nixosModules.home-manager
             {
