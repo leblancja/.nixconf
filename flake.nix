@@ -36,16 +36,17 @@
     nixosConfigurations = {
       desktop-3070S = let
         username = "jordanl";
-        specialArgs = {inherit username;};
+        specialArgs = {inherit inputs username;};
       in
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;
           system = "x86_64-linux";
 
           modules = [
-            ./hosts/desktop-3070S
             inputs.musnix.nixosModules.musnix
             inputs.stylix.nixosModules.stylix
+
+            ./hosts/desktop-3070S
 
             home-manager.nixosModules.home-manager
             {

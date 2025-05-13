@@ -27,6 +27,8 @@
     gimp-with-plugins
     blockbench
     krita
+    ghostty
+    alacritty
 
     #productivity
     obsidian
@@ -40,5 +42,6 @@
     reaper
     yabridge
     inkscape-with-extensions
+    qutebrowser
   ];
 }

@@ -4,7 +4,6 @@
 {
   config,
   pkgs,
-  inputs,
   lib,
   ...
 }: {
@@ -18,10 +17,10 @@
 
   imports = [
     ../../nixosModules/system.nix
-    ../../nixosModules/gnome.nix
+    # ../../nixosModules/gnome.nix
     #../../nixosModules/sway.nix
     ../../nixosModules/gaming.nix
-    #../../nixosModules/hyprland.nix
+    ../../nixosModules/hyprland.nix
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
@@ -58,10 +57,11 @@
 
   hardware.nvidia = {
     modesetting.enable = true;
-    powerManagement.enable = false;
+    powerManagement.enable = true;
     powerManagement.finegrained = false;
     open = false;
     nvidiaSettings = true;
+    forceFullCompositionPipeline = true;
     package = config.boot.kernelPackages.nvidiaPackages.latest;
   };
 

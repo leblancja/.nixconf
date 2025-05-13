@@ -11,6 +11,8 @@
   };
 
   nix.settings = {
+    substituters = ["https://hyprland.cachix.org"];
+    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
     experimental-features = ["nix-command" "flakes"];
   };
 
@@ -27,7 +29,6 @@
 
   services.printing = {
     enable = true;
-    drivers = [pkgs.hplip];
   };
 
   fonts = {
@@ -60,6 +61,8 @@
     xsel
     zsh
     fastfetch
+    cachix
+    kdePackages.dolphin
   ];
   services.pulseaudio.enable = false;
 
@@ -84,5 +87,5 @@
   virtualisation.docker = {
     enable = true;
   };
-  #environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 }
