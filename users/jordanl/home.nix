@@ -1,10 +1,5 @@
-{
-  pkgs,
-  username,
-  ...
-}: {
+{username, ...}: {
   imports = [
-    ../../modules/home/core.nix
     ../../modules/home/shell
     ../../modules/home/hyprland
     ../../modules/home/nixvim
@@ -14,7 +9,13 @@
     ../../modules/home/browsers.nix
     ../../modules/home/packages.nix
   ];
+  home = {
+    inherit username;
+    homeDirectory = "/home/${username}";
+    stateVersion = "24.11";
+  };
 
+  programs.home-manager.enable = true;
   programs.git = {
     userName = "leblancja";
     userEmail = "leblancja@outlook.com";
