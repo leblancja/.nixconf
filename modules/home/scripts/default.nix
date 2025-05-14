@@ -8,6 +8,7 @@
     (import ./wallsetter.nix {
       inherit pkgs;
     })
+    (import ./bgset.nix {inherit pkgs;})
     (import ./emopicker.nix {inherit pkgs;})
     (import ./rofi-launcher.nix {inherit pkgs;})
     (import ./web-search.nix {inherit pkgs;})

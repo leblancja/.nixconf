@@ -2,7 +2,7 @@
   wayland.windowManager.hyprland.settings = {
     bind = [
       "$modifier,Return,exec,kitty"
-      "$modifier ALT,W,exec,wallsetter"
+      "$modifier ALT,W,exec,bgset"
       "$modifier ALT,K,exec,list-keybinds"
       "$modifier SHIFT,N,exec,swaync-client -rs"
       "$modifier,S,exec,screenshootin"
