@@ -62,8 +62,9 @@
     zsh
     fastfetch
     cachix
-    kdePackages.dolphin
-    kdePackages.dolphin-plugins
+    xfce.thunar
+    xfce.tumbler
+    gnome.gvfs
   ];
   services.pulseaudio.enable = false;
 

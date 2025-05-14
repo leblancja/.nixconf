@@ -9,6 +9,7 @@
     ../../modules/home/browsers.nix
     ../../modules/home/packages.nix
     ../../modules/home/swaync.nix
+    ../../modules/home/qt.nix
   ];
   home = {
     inherit username;
