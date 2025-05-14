@@ -8,6 +8,7 @@
     ../../modules/home/kitty.nix
     ../../modules/home/browsers.nix
     ../../modules/home/packages.nix
+    ../../modules/home/swaync.nix
   ];
   home = {
     inherit username;

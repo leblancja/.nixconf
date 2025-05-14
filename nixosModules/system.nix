@@ -63,6 +63,7 @@
     fastfetch
     cachix
     kdePackages.dolphin
+    kdePackages.dolphin-plugins
   ];
   services.pulseaudio.enable = false;
 
