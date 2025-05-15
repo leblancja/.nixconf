@@ -17,10 +17,13 @@
 
   imports = [
     ../../nixosModules/system.nix
-    # ../../nixosModules/gnome.nix
-    #../../nixosModules/sway.nix
     ../../nixosModules/gaming.nix
     ../../nixosModules/hyprland.nix
+    ../../nixosModules/thunar.nix
+    ../../nixosModules/nautilus.nix
+    ../../nixosModules/fonts.nix
+    ../../nixosModules/flatpak.nix
+    ../../nixosModules/stylix.nix
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
@@ -64,9 +67,6 @@
     forceFullCompositionPipeline = true;
     package = config.boot.kernelPackages.nvidiaPackages.latest;
   };
-
-  #programs.nix-ld.enable = true;
-  services.flatpak.enable = true;
 
   musnix.enable = true;
 }

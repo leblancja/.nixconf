@@ -1,7 +1,6 @@
 {
   pkgs,
   nixvim,
-  stylix,
   ...
 }: {
   imports = [

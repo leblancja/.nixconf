@@ -31,41 +31,42 @@
     enable = true;
   };
 
-  fonts = {
-    packages = with pkgs; [
-      noto-fonts
-      noto-fonts-cjk-sans
-      noto-fonts-emoji
-      nerd-fonts.fira-code
-      nerd-fonts.droid-sans-mono
-      nerd-fonts.jetbrains-mono
-      material-design-icons
-    ];
-
-    enableDefaultPackages = false;
-
-    fontconfig.defaultFonts = {
-      serif = ["Noto Serif" "Noto Color Emoji"];
-      sansSerif = ["Noto Sans" "Noto Color Emoji"];
-      monospace = ["JetBrainsMono Nerd Font" "Noto Color Emoji"];
-      emoji = ["Noto Color Emoji"];
-    };
-  };
-
   environment.systemPackages = with pkgs; [
     vim
+    appimage-run
+    cliphist
+    duf
+    ffmpeg
+    file-roller
+    gedit
+    eog
+    hyprpicker
+    inxi
+    killall
+    libnotify
+    lm_sensors
+    lshw
+    mpv
+    nwg-displays
+    pavucontrol
+    pciutils
+    picard
+    pkg-config
+    playerctl
+    socat
+    unrar
+    unzip
+    usbutils
     git
     wget
     curl
-    unzip
     xsel
-    zsh
+    glxinfo
+    ncdu
     fastfetch
     cachix
-    xfce.thunar
-    xfce.tumbler
-    gnome.gvfs
   ];
+
   services.pulseaudio.enable = false;
 
   services.pipewire = {

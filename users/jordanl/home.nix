@@ -10,6 +10,8 @@
     ../../modules/home/packages.nix
     ../../modules/home/swaync.nix
     ../../modules/home/qt.nix
+    ../../modules/home/xdg.nix
+    ../../modules/home/gtk.nix
   ];
   home = {
     inherit username;

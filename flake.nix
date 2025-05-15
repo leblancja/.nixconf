@@ -35,8 +35,9 @@
   }: {
     nixosConfigurations = {
       desktop-3070S = let
+        host = "desktop-3070S";
         username = "jordanl";
-        specialArgs = {inherit inputs username;};
+        specialArgs = {inherit inputs host username;};
       in
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;
