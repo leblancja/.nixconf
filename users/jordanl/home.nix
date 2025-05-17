@@ -12,6 +12,11 @@
     ../../modules/home/qt.nix
     ../../modules/home/xdg.nix
     ../../modules/home/gtk.nix
+    ../../modules/home/scripts
+    ../../modules/home/rofi
+    ../../modules/home/stylix.nix
+    ../../modules/home/wlogout
+    ../../modules/home/waybar/waybar-simple.nix
   ];
   home = {
     inherit username;

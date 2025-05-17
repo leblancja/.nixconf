@@ -6,13 +6,10 @@
 }: {
   imports = [
     ./bindings.nix
-    ./waybar.nix
     ./hyprlock.nix
     ./hypridle.nix
     ./pyprland.nix
-    ./animations-def.nix
-    ../rofi
-    ../scripts
+    ./animations-end4.nix
   ];
   systemd.user.targets.hyprland-session.Unit.Wants = [
     "xdg-desktop-autostart.target"
@@ -110,7 +107,7 @@
         "dbus-update-activation-environment --all --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "systemctl --user start hyprpolkitagent"
-        #"killall -q wbg;sleep .5 && wbg"
+        "sleep 1.5 && ${pkgs.wbg}/bin/wbg ~/Pictures/Wallpapers/eizensuzuki2.png"
         "killall -q waybar;sleep .5 && waybar"
         "killall -q swaync;sleep .5 && swaync"
         "nm-applet --indicator"
@@ -147,11 +144,11 @@
       ];
     };
 
-    # extraConfig = ''
-    #   xwayland {
-    #     force_zero_scaling = true
-    #   }
-    # '';
+    extraConfig = ''
+      workspace = 1, monitor:DP-1, default:true
+      workspace = 9, monitor:DP-2, default:true
+      workspace = 10, monitor:HDMI-A-1, default:true
+    '';
   };
 
   home.packages = with pkgs; [

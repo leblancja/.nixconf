@@ -18,7 +18,7 @@
       "kitty_mod+t" = "launch_tab";
     };
 
-    themeFile = "kanagawa";
+    themeFile = "gruvbox-dark-hard";
     font = {
       name = "JetBrainsMono Nerd Font Mono";
     };

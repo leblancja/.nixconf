@@ -4,7 +4,7 @@
       "$modifier,Return,exec,kitty"
       "$modifier ALT,W,exec,bgset"
       "$modifier ALT,K,exec,list-keybinds"
-      "$modifier SHIFT,N,exec,swaync-client -rs"
+      "$modifier SHIFT,N,exec,swaync-client -t"
       "$modifier,S,exec,screenshootin"
       "$modifier,V,exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
       "$modifier SHIFT,Return,exec,rofi-launcher"

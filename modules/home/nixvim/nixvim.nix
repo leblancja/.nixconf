@@ -4,21 +4,11 @@
       enable = true;
       defaultEditor = true;
 
-      colorschemes = {
-        kanagawa = {
-          enable = true;
-          autoLoad = true;
-          settings = {
-            compile = false;
-            terminalColors = true;
-            theme = "wave";
-            transparent = false;
-            undercurl = true;
-            background = {
-              dark = "wave";
-              light = "lotus";
-            };
-          };
+      colorschemes.gruvbox = {
+        enable = true;
+        settings = {
+          terminal_colors = true;
+          contrast = "hard";
         };
       };
 
@@ -54,6 +44,7 @@
         updatetime = 250;
         timeoutlen = 300;
         list = true;
+
         # NOTE: .__raw here means that this field is raw lua code
         listchars.__raw = "{ tab = '» ', trail = '·', nbsp = '␣' }";
 
