@@ -1,6 +1,7 @@
 {
   pkgs,
   osConfig,
+  config,
   ...
 }:
 {
@@ -13,9 +14,7 @@
       config.rocmSupport = false;
     })
     godot
-    # (krita.override {
-    # config.cudaSupport = true;
-    # })
+    krita
     calibre
     prismlauncher
     # uzdoom
@@ -27,18 +26,19 @@
     open-in-mpv
     nicotine-plus
     material-maker
-    # (llama-cpp.override {
-    # config.cudaSupport = true;
-    # config.rocmSupport = false;
-    # })
-    # llama-swap
+    (llama-cpp.override {
+    config.cudaSupport = true;
+    config.rocmSupport = false;
+    })
+    llama-swap
     # opencode
-    dig
     obsidian
     openrgb-with-all-plugins
     gpu-screen-recorder
     tree-sitter
     kitty
+    clisp
+    
   ];
   programs = {
     lutris = {
@@ -61,16 +61,10 @@
     chromium = {
       enable = true;
     };
-    librewolf = {
+    firefox = {
       enable = true;
-      profiles = {
-        jordanl = {
-          name = "jordanl";
-          isDefault = true;
-        };
-      };
+      configPath = "${config.xdg.configHome}/mozilla/firefox";
     };
-
     vesktop = {
       enable = true;
       vencord.useSystem = true;

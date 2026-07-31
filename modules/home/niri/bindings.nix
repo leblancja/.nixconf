@@ -1,18 +1,79 @@
-{config, ...}: {
+{ config, ... }: {
   programs.niri.settings.binds = with config.lib.niri.actions; {
     #noctalia
-
-    "Mod+D".action = spawn ["noctalia-shell" "ipc" "call" "launcher" "toggle"];
-    "Mod+S".action = spawn ["noctalia-shell" "ipc" "call" "controlCenter" "toggle"];
-    "Mod+Shift+S".action = spawn ["noctalia-shell" "ipc" "call" "settings" "toggle"];
-    "Mod+Alt+B".action = spawn ["noctalia-shell" "ipc" "call" "bar" "toggle"];
-    "Mod+Alt+L".action = spawn ["noctalia-shell" "ipc" "call" "lockScreen" "lock"];
-    "Mod+Shift+Q".action = spawn ["noctalia-shell" "ipc" "call" "sessionMenu" "toggle"];
-    "Ctrl+Alt+Delete".action = spawn ["noctalia-shell" "ipc" "call" "sessionMenu" "toggle"];
-	"Mod+M".action = spawn ["noctalia-shell" "ipc" "call" "volume" "muteInput"];
-	"Mod+Alt+R".action = spawn ["noctalia-shell" "ipc" "call" "screenRecorder" "toggle"];
-	"Mod+Alt+E".action = spawn ["noctalia-shell" "ipc" "call" "launcher" "emoji"];
-	
+    "Mod+B".action = spawn [
+      "firefox"
+    ];
+    "Mod+D".action = spawn [
+      "noctalia-shell"
+      "ipc"
+      "call"
+      "launcher"
+      "toggle"
+    ];
+    "Mod+S".action = spawn [
+      "noctalia-shell"
+      "ipc"
+      "call"
+      "controlCenter"
+      "toggle"
+    ];
+    "Mod+Shift+S".action = spawn [
+      "noctalia-shell"
+      "ipc"
+      "call"
+      "settings"
+      "toggle"
+    ];
+    "Mod+Alt+B".action = spawn [
+      "noctalia-shell"
+      "ipc"
+      "call"
+      "bar"
+      "toggle"
+    ];
+    "Mod+Alt+L".action = spawn [
+      "noctalia-shell"
+      "ipc"
+      "call"
+      "lockScreen"
+      "lock"
+    ];
+    "Mod+Shift+Q".action = spawn [
+      "noctalia-shell"
+      "ipc"
+      "call"
+      "sessionMenu"
+      "toggle"
+    ];
+    "Ctrl+Alt+Delete".action = spawn [
+      "noctalia-shell"
+      "ipc"
+      "call"
+      "sessionMenu"
+      "toggle"
+    ];
+    "Mod+M".action = spawn [
+      "noctalia-shell"
+      "ipc"
+      "call"
+      "volume"
+      "muteInput"
+    ];
+    "Mod+Alt+R".action = spawn [
+      "noctalia-shell"
+      "ipc"
+      "call"
+      "screenRecorder"
+      "toggle"
+    ];
+    "Mod+Alt+E".action = spawn [
+      "noctalia-shell"
+      "ipc"
+      "call"
+      "launcher"
+      "emoji"
+    ];
 
     #niri
     "Mod+Shift+Slash".action = show-hotkey-overlay;
@@ -87,9 +148,12 @@
 
     #~~~custom scripts
     "Mod+Alt+G" = {
-      action = spawn ["niri-gaming-mode.sh"];
+      action = spawn [ "niri-gaming-mode.sh" ];
     };
-    "Mod+Alt+C".action = spawn ["screenshootin.sh"];
-    "Mod+T".action = spawn ["kitten" "quick-access-terminal"];
+    "Mod+Alt+C".action = spawn [ "screenshootin.sh" ];
+    "Mod+T".action = spawn [
+      "kitten"
+      "quick-access-terminal"
+    ];
   };
 }

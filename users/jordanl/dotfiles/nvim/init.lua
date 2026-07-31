@@ -3,12 +3,11 @@ vim.pack.add({
     'https://github.com/nvim-mini/mini.misc',
     'https://github.com/neovim/nvim-lspconfig',
     'https://github.com/blazkowolf/gruber-darker.nvim',
-    'https://github.com/Mofiqul/dracula.nvim',
     'https://github.com/tpope/vim-sleuth',
+    'https://github.com/akinsho/toggleterm.nvim',
 })
 require('nvim-treesitter').setup()
 require('gruber-darker').setup()
-require('dracula').setup()
 vim.cmd.colorscheme('gruber-darker')
 
 require('mini.basics').setup({
@@ -87,6 +86,9 @@ require('mini.trailspace').setup()
 require('vim._core.ui2').enable({})
 require('mini.comment').setup()
 require('mini.diff').setup({ style = 'sign' })
+require('toggleterm').setup()
+require('mini.pairs').setup()
+
 
 vim.lsp.enable({
     'lua_ls',
@@ -103,6 +105,9 @@ vim.lsp.enable({
     'nim_langserver',
     'ocamllsp',
     'emmet_language_server',
+    'css_variables',
+    'clangd',
+    'cmake',
 })
 
 
@@ -147,7 +152,7 @@ keymap("n", "<space>", "<Nop>")
 keymap("n", "<Leader>w", "<cmd>w!<CR>", s)                    -- Save the current file
 keymap("n", "<Leader>q", "<cmd>q<CR>", s)                     -- Quit Neovim
 keymap("n", "<Leader>fo", ":lua vim.lsp.buf.format()<CR>", s) -- Format the current buffer using LSP
-keymap("t", "<Esc>", "<C-\\><C-N>")                           -- Exit terminal mode
+keymap("t", "<ESC>", "<C-\\><C-N>")                           -- Exit terminal mode
 keymap("n", "<Leader>ef", ":lua MiniFiles.open()<CR>", s)
 keymap("n", "<Leader>ec", ":lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>", s)
 keymap("i", "jk", "<Esc>", s)
@@ -181,6 +186,11 @@ keymap("n", "<Leader>buc", ":lua MiniBufremove.unshow_in_window()<CR>", { desc =
 keymap("n", "<Leader>bua", ":lua MiniBufremove.unshow()<CR>", { desc = "Unshow this buffer from all windows" })
 
 --mini-pick
+keymap("n", "<Leader>ff", "<cmd>Pick files<CR>", { desc = "Pick files" })
+keymap("n", "<Leader>fb", "<cmd>Pick buffers<CR>", { desc = "Pick open buffers" })
+keymap("n", "<Leader>fg", "<cmd>Pick grep_live<CR>", { desc = "Pick from live grep" })
+--toggleterm
+keymap("n", "<Leader>/", ":ToggleTerm<CR>",s)
 
 
 -- AUTOCOMMANDS

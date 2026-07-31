@@ -12,7 +12,7 @@
       nerd-fonts.hack
       dejavu_fonts
       material-icons
-      cantarell-fonts
+      # cantarell-fonts
       open-fonts
     ];
   };

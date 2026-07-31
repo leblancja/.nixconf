@@ -6,13 +6,16 @@
 }:
 let
   corner-radius = 6.0;
-  hl_color ="${config.lib.stylix.colors.base08}";
+  hl_color = "${config.lib.stylix.colors.base08}";
 in
 {
   programs.niri.settings = {
     xwayland-satellite = {
       enable = true;
       path = lib.getExe pkgs.xwayland-satellite-unstable;
+    };
+    debug = {
+      honor-xdg-activation-with-invalid-serial = [];
     };
     spawn-at-startup = [
       { command = [ "noctalia-shell" ]; }

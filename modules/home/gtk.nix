@@ -3,7 +3,7 @@
     enable = true;
     colorScheme = "dark";
     iconTheme = {
-      name = "Flat-Remix-Green-Dark";
+      name = "Flat-Remix-Yellow-Dark";
       package = pkgs.flat-remix-icon-theme;
     };
     gtk3.extraConfig = {

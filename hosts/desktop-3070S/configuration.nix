@@ -9,7 +9,9 @@
 }:
 {
   system.stateVersion = "24.05";
-
+  nixpkgs.config.permittedInsecurePackages = [
+    "pnpm-10.29.2"
+  ];
   boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
   boot.blacklistedKernelModules = [
     "nouveau"
@@ -27,21 +29,26 @@
     shell = pkgs.zsh;
   };
   nixpkgs.overlays = [
-    (_: prev: {
-      openldap = prev.openldap.overrideAttrs {
-        doCheck = false; # False is a bit more honest on x86_64 systems
-      };
-    })
+    # (_: prev: {
+    #   openldap = prev.openldap.overrideAttrs {
+    #     doCheck = false; # False is a bit more honest on x86_64 systems
+    #   };
+    # })
   ];
   nix.settings = {
     experimental-features = [
       "nix-command"
       "flakes"
     ];
-    substituters = [ "https://nix-citizen.cachix.org" ];
-    trusted-public-keys = [ "nix-citizen.cachix.org-1:lPMkWc2X8XD4/7YPEEwXKKBg+SVbYTVrAaLA2wQTKCo=" ];
+    substituters = [
+      "https://nix-citizen.cachix.org"
+      "https://noctalia.cachix.org"
+    ];
+    trusted-public-keys = [
+      "nix-citizen.cachix.org-1:lPMkWc2X8XD4/7YPEEwXKKBg+SVbYTVrAaLA2wQTKCo="
+      "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
+    ];
   };
-
   nix.gc = {
     automatic = lib.mkDefault true;
     dates = lib.mkDefault "weekly";
@@ -162,7 +169,7 @@
     videoAcceleration = true;
     #forceFullCompositionPipeline = true;
     package = config.boot.kernelPackages.nvidiaPackages.latest;
- };
+  };
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = false;

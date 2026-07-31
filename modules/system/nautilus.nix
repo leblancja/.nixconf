@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     nautilus
-    code-nautilus
 	nautilus-python
   ];
   programs.nautilus-open-any-terminal = {
@@ -10,4 +9,3 @@
   };
   services.gvfs.enable = true;
 }
-
